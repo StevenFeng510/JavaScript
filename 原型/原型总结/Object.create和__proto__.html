@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    let user = {
+      show() {
+        return this.name;
+      },
+    };
+    //prototype
+    //定义对象的原型,不能获取
+    // let hd = Object.create(user, {
+    //   name: {
+    //     value: "baidu.com",
+    //   },
+    // });
+    // console.log(hd.show());
+
+    let hd = { name: "baidu" };
+    // hd.__proto__ = user;
+    // console.log(hd.__proto__);
+
+    Object.setPrototypeOf(hd, user);
+    console.log(hd.show());
+    console.log(Object.getPrototypeOf(hd));
+  </script>
+</html>

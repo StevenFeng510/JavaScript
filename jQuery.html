@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    div {
+      width: 200px;
+      height: 200px;
+    }
+  </style>
+  <body>
+    <button class="btnId">123</button>
+    <button class="btn1">abc</button>
+    <div>1</div>
+  </body>
+  <script src="jquery-3.4.1.min.js"></script>
+  <script>
+    let $btnobj = $(".btnId");
+    $btnobj.click(function () {
+      alert("jQuery的单击事件");
+    });
+
+    $(function () {
+      $("<div>123</div>" + "<div>213</div>").appendTo("body");
+
+      $(".btn1").click(function () {
+        $("div").css("background-color", "grey");
+      });
+    });
+  </script>
+</html>

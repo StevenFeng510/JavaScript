@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    // let xj = {
+    //   name: "baidu",
+    //   show: function () {
+    //     console.log(this.name);
+    //   },
+    // };
+    // let hd = {
+    //   name: "JS",
+    //   show: function () {
+    //     console.log(this.name);
+    //   },
+    // };
+    //工厂函数构造方法
+    function user(name, age) {
+      return {
+        name,
+        age,
+        show: function () {
+          console.log(this.name + `-baidu`);
+        },
+        info: function () {
+          console.log(`${this.name}的年龄是${this.age}`);
+        },
+      };
+    }
+    let xj = user("李四", 22);
+    xj.show();
+    xj.info();
+  </script>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>测试</title>
+</head>
+
+<body>
+    <script>
+        "use strict"        //严格模式
+        const Host = {
+            url: "http://www.baidu.com",
+            port: 443
+        };
+        Object.freeze(Host); //冻结       //冻结对象里的值(冻结变量)
+        // Host.port = 20;
+        console.log(Host);
+
+
+        //传值 传址
+        let a = 1;
+        let b = a;
+        console.log(a, b);
+
+        let e = { name: "hanhan" };
+        let f = e;
+
+        e.name = "haoshua";
+        console.log(e, f);
+
+    </script>
+</body>
+
+</html>

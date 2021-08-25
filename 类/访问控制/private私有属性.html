@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    //为属性或方法名前加 # 为声明为私有属性
+    class Common {}
+    class User {
+      //private
+      #host = "http://www.baidu.com";
+      constructor(name) {
+        this.name = name;
+        this.check(name);
+      }
+      set host(url) {
+        if (!/^http?:/i.test(url)) {
+          throw new Error("地址错误");
+        }
+        this.#host = url;
+      }
+      check() {
+        if (this.name.length < 5) {
+          throw new Error("名字长度不能小于5位");
+        }
+        return true;
+      }
+    }
+    let hd = new User("909090");
+    hd.host = "http://www.baidu123.com";
+    console.log(hd);
+  </script>
+</html>

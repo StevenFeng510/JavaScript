@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // const hd = "www.baidu.com";
+        // console.log(hd.indexOf("b"));
+        // console.log(hd.includes("b", 4)); //返回布尔类型
+        // console.log(hd.lastIndexOf("o")); //从后往前检索
+        // console.log(hd.startsWith("b")); //检索是否以该字符串开始
+        // console.log(hd.endsWith("b")); //检索是否以该字符串结束
+
+        const word = ["123", "cba"];
+        const string = "我喜欢学习abc和cba";
+        const status = word.some(word => {
+            console.log(word);
+            return string.includes(word);
+        });
+        if (status) {
+            console.log("找到了关键词");
+        }
+    </script>
+</body>
+
+</html>

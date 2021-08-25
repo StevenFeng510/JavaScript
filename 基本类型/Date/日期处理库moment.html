@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!--第三方日期处理库-->
+    <script src="https://cdn.bootcss.com/moment.js/2.24.0/moment.min.js"></script>
+    <script>
+        const date = moment("1990-02-22 03:36:16");
+        console.log(date.format("YYYY-MM-DD HH:mm:ss"));
+        console.log(date.add(10, "days").format("YYYY-MM-DD HH:mm:ss"));
+    </script>
+</body>
+
+</html>

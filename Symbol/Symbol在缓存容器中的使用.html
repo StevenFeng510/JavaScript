@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    class Cache { //缓存容器
+        static data = {};
+        static set(name, value) {
+            return (this.data[name] = value);
+        }
+        static get(name) {
+            return this.data[name];
+        }
+    }
+    // Cache.set("hdcms", "baidu.com");
+    // console.log(Cache.get("hdcms"));
+
+    let user = {
+        name: "apple",
+        desc: "用户名",
+        key: Symbol("会员资料")
+    };
+    let cart = {
+        name: "apple",
+        desc: "购物车",
+        key: Symbol("购物车")
+    };
+    Cache.set(user.key, user);
+    Cache.set(cart.key, cart);
+    console.log(Cache.get(user.key));
+</script>
+
+</html>

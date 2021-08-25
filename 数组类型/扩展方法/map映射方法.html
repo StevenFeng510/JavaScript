@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    let lessons = [{
+            title: '媒体查询响应式布局',
+            category: 'css'
+        },
+        {
+            title: 'FLEX 弹性盒模型',
+            category: 'css'
+        },
+        {
+            title: 'MYSQL多表查询随意操作',
+            category: 'mysql'
+        }
+    ];
+    let hd = lessons.map(function (value) {
+        return Object.assign({ //浅拷贝 
+            click: 100
+        }, value);
+        // value.click = 100;
+    });
+    console.table(hd);
+    console.table(lessons);
+    // let arr = ["hdcms", "baidu"];
+    // //值类型 不会改变原数组
+    // let hd = arr.map(function (value, index, arr) {
+    //     value = `123 -${value}`;
+    //     return value;
+    // });
+    // console.table(hd);
+</script>
+
+</html>

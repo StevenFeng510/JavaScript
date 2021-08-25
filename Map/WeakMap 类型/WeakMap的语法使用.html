@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>hdcms</div>
+    <div>baidu.com</div>
+</body>
+<script>
+    // WeakMap类型是弱引用类型
+    // let map = new WeakMap();
+    // map.set(["hdcms"], "baidu.com");
+    // let divs = document.querySelectorAll("div");
+    // let map = new WeakMap();
+    // divs.forEach(item => map.set(item, item.innerHTML));
+    // console.log(map);
+
+    let arr = [];
+    let map = new WeakMap();
+    map.set(arr, "baidu.com"); //WeakMap类型设置
+    // map.delete(arr); //删除
+    // console.log(map.has(arr));
+    // console.log(map);
+
+    for (const iterator of map) { //WeakMap 不可迭代
+        console.log(iterator);
+    }
+</script>
+
+</html>

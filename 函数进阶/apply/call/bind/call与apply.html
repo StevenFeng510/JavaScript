@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button>hdcms</button>
+    <button>baidu</button>
+  </body>
+  <script>
+    //call apply都是将对象绑定到this 与 bind 不同 call/apply 会立即执行函数
+    let arr = [1, 2, 3, 4, 5, 6];
+    console.log(Math.max.apply(Math, arr)); //apply 用数组传参
+    // function show() {
+    //   alert(this.innerHTML);
+    // }
+    // let buttons = document.querySelectorAll("button");
+    // for (let i = 0; i < buttons.length; i++) {
+    //   buttons[i].addEventListener("click", (event) => {
+    //     show.call(event.target);
+    //   });
+    // }
+
+    // let lisi = {
+    //   name: "李四",
+    // };
+    // let wangwu = {
+    //   name: "王五",
+    // };
+    // function User(web, url) {
+    //   console.log(web + url + this.name);
+    // }
+    // User.call(lisi, "开源", "www.baidu.com"); //call 需要分别传参
+    // User.apply(lisi, ["开源", "www.baidu.com"]); //apply 用数组传参
+  </script>
+</html>

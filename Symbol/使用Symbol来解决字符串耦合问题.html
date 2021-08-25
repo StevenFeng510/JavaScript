@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    let user1 = {
+        name: "李四",
+        key: Symbol()
+    };
+    let user2 = {
+        name: "李四",
+        key: Symbol()
+    };
+    let grade = { //以[] 变量形式声明和访问
+        [user1.key]: {
+            JS: 123,
+            css: 89
+        },
+        [user2.key]: {
+            JS: 13,
+            css: 89
+        }
+    };
+    console.log(grade[user1.key]);
+</script>
+
+</html>

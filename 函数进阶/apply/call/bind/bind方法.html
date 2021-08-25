@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button>百度</button>
+  </body>
+  <script>
+    document.querySelector("button").addEventListener(
+      "click",
+      function (event) {
+        document.write(this.url + event.target.innerHTML);
+      }.bind({ url: "www.baidu.com" }) // bind适合不需要立即执行的场合使用
+    );
+    //bind call bind 不会立即执行函数
+    //bind是复制函数行为
+    // function show() {
+    //   console.log(this.name);
+    // }
+    // show.bind({ name: "baidu" })(); //加()才会执行
+
+    // let a = function () {};
+    // let b = a;
+    // console.log(a instanceof Object);
+
+    //     function hd(a, b) {
+    //       return this.f + a + b;
+    //     }
+    //     // console.log(hd.call({ f: 1 }, 1, 1));
+    // 1+1+1 参数1赋值给b即 a=1,b=1
+    //     let func = hd.bind({ f: 1 }, 1, 1);
+    //     console.log(func(1, 2));
+  </script>
+</html>

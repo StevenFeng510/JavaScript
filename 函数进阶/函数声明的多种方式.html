@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // let str = new String("baidu.com");
+    // console.log(str);
+
+    // let str = "baidu.com";//引号定义最终也会转成对象
+    // console.log(str.substr(0, 1));
+
+    // let func = new Function("title", "console.log(title)");
+    // func("baidu");
+
+    // function hd(title) {
+    //     console.log(title);
+    // }
+    // hd(123);
+
+    // let cms = function (title) {
+    //     console.log(title);
+    // };
+    // cms("baidu");
+
+
+    let user = {
+        name: null,
+        setUsername(name) {
+            this.name = name;
+        },
+        getUsername() {
+            return this.name;
+        }
+    };
+    user.setUsername("baidu.com");
+    console.log(user.getUsername());
+</script>
+
+</html>

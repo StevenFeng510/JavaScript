@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    // let edu = {
+    //   name: "baidu",
+    //   show: function () {
+    //     return this.name;
+    //   },
+    // };
+    // console.log(edu.show());
+
+    function User(name) {
+      this.name = name;
+      this.show = function () {
+        return this.name; //此处的this指当前对象
+      };
+    }
+    let lisi = new User("李四");
+    console.log(lisi.show());
+  </script>
+</html>

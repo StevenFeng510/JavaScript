@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    //http://www.baidu.com?article/lists/id=1&cat=js
+    //复用方法
+    function Request() {
+      this.get = function (params) {
+        //id=1 & cat=js;
+        let str = Object.keys(params)
+          .map((k) => `${k}=${params[k]}`)
+          .join("&");
+        let url = `http://api.baidu.com?${this.url}/${str}`;
+        document.write(url + "<hr/>");
+      };
+    }
+    //文章控制器
+    function Article() {
+      this.url = "article/lists";
+      Request.call(this);
+    }
+    //课程控制器
+    let a = new Article();
+    console.log(a.get({ id: "1", cat: "js" }));
+    function User() {
+      this.url = "user/lists";
+      Request.call(this);
+    }
+
+    let user = new User();
+    user.get({ id: "2", role: "admin" });
+  </script>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    // function Hd(name) {
+    //   this.name = name;
+    // }
+    // Hd.prototype.show = function () {};
+    // console.log(
+    //   JSON.stringify(
+    //     Object.getOwnPropertyDescriptor(Hd.prototype, "show"),
+    //     null,
+    //     2
+    //   )
+    // );
+    // let H = new Hd();
+    // for (const key in H) {
+    //   console.log(key);
+    // }
+    // for (const key in H) {
+    //   if (H.hasOwnProperty(key)) {
+    //     console.log(key);
+    //   }
+    // }
+
+    //使用类的时候 会自动设置好特征 不被遍历
+    class User {
+      constructor(name) {
+        this.name = name;
+      }
+      show() {}
+    }
+    console.dir(User);
+    //"enumerable": false,
+    console.log(
+      JSON.stringify(
+        Object.getOwnPropertyDescriptor(User.prototype, "show"),
+        null,
+        2
+      )
+    );
+    let hd = new User();
+    for (const key in hd) {
+      console.log(key);
+    }
+  </script>
+</html>

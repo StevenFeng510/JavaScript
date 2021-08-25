@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    let hd = {
+      data: [1, 2, 3, 4, 5, 5, 26],
+    };
+
+    console.log(Math.max.call(null, ...hd.data));
+
+    let xj = {
+      lessons: { js: 89, php: 90, jk: 67, linux: 100 },
+      //   get data() {
+      //     return Object.values(this.lessons);
+      //   },
+    };
+    console.log(Math.max.apply(null, Object.values(xj.lessons)));
+  </script>
+</html>

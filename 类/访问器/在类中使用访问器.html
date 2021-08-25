@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    class Request {
+      constructor(host) {
+        this.data = {};
+        this.host = host;
+      }
+      //使用访问器可以管控属性，有效的防止属性随意修改
+      set host(url) {
+        if (!/^http?:\/\//i.test(url)) {
+          throw new Error("地址格式错误");
+        }
+        this.data.host = url;
+      }
+      get host() {
+        return this.data["host"];
+      }
+    }
+    let hd = new Request("http://www.baidu.com");
+    // hd.host = "http://baiud.com";
+    // hd.setUrl("http://baidu.com");
+    console.log(hd);
+  </script>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    let hd = {
+      title: "baidu",
+      url: "houdunren.com",
+      teacher: {
+        name: "php",
+      },
+      //自定义JSON数据格式
+      toJSON: function () {
+        return {
+          title: this.title,
+          teacher: this.teacher.name,
+        };
+      },
+    };
+
+    let json = JSON.stringify(hd, null, 2); //第二个参数指定保存的属性  第三个是参数用来控制TAB数量
+    console.log(json);
+
+    // let arr = ["baidu.com", "js"];
+    // let arrJson = JSON.stringify(arr, ["title", "url"], 2);
+    // console.log(arrJson);
+  </script>
+</html>

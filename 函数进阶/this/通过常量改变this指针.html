@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    let Lesson = {
+      site: "baidu",
+      lists: ["js", "css", "mysql"],
+      show: function () {
+        // console.log(this.lists);
+        // const self = this; //1.常量改变this指针 父作用域中定义引用this的变量
+        return this.lists.map(function (value) {
+          //   console.log(value);
+          //   console.log(self);
+          return `${this.site}-${value}`;
+          //   console.log(this);
+        }, this); //2.通过第二个参数改变函数里面的this
+      },
+    };
+    console.table(Lesson.show());
+  </script>
+</html>

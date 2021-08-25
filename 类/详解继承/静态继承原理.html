@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    //静态的属性和方法也是可以被继承使用的
+    // function User() {}
+    // User.site = "baidu";
+    // User.show = function () {
+    //   console.log("User.static.method");
+    // };
+    // // console.dir(User);
+    // function Admin() {}
+    // Admin.__proto__ = User;
+    // // console.dir(Admin);
+    // Admin.show();
+    // console.log(Admin.site);
+
+    class User {
+      static site = "www.baidu.com";
+      static show() {
+        console.log("User.static.method");
+      }
+    }
+    class Admin extends User {}
+    console.dir(Admin);
+  </script>
+</html>

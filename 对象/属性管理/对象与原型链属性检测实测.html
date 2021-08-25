@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    let hd = {
+      name: "baidu",
+    };
+    let arr = ["baidu.com", "hdcms"];
+    console.log(arr);
+    console.log(arr.hasOwnProperty("length"));
+
+    console.log("concat" in arr); //查找原型链
+
+    let a = { name: "baidu" };
+    let b = { url: "www.baidu.com" };
+    Object.setPrototypeOf(a, b); //为a设置一个父级 a的原型链中会包含b
+    console.log(a);
+
+    function oss(options) {
+      if (!options.hasOwnProperty("host")) {
+        throw new Error("必须设置主机地址");
+      }
+    }
+    oss({ user: "admin", host: "192.1.1.1" });
+  </script>
+</html>

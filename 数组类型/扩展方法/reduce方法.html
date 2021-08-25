@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    //reduce函数可以迭代数组的所有元素
+
+    // let arr = [1, 2, 3, 4, 5];
+    // arr.reduce(function (pre, value, index, array) {
+    //     console.log(pre, value);
+    //     return 99;
+    // });
+    // arr.reduce(function (pre, value, index, array) {
+    //     console.warn(pre, value);
+    //     return 99;
+    // }, 0);
+
+
+    //统计元素出现的次数
+    //     let arr = [1, 2, 3, 1, 1];
+
+    //     function arrayCount(array, item) {
+    //         return array.reduce(function (total, cur) {
+    //             total += item == cur ? 1 : 0;
+    //             return total;
+    //         }, 0)
+    //     };
+    //     console.log(arrayCount(arr, 1));
+
+    let arr = [1, 2, 3, 5, 2, 100];
+
+    function arrayMax(array) {
+        return array.reduce(function (pre, cur) {
+            return pre > cur ? pre : cur;
+        });
+    }
+    console.log(arrayMax(arr));
+</script>
+
+</html>

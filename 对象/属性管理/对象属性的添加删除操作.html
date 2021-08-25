@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    let hd = {};
+    hd.name = "baidu";
+    hd["age"] = 18;
+    console.log(hd);
+    delete hd.name;
+    console.log(hd);
+
+    console.log(hd.hasOwnProperty("age"));
+  </script>
+</html>

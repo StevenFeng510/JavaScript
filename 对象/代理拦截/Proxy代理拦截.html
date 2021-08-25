@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    "use strict";
+    const hd = { name: "baidu" };
+    const proxy = new Proxy(hd, {
+      get(obj, property) {
+        // console.log(property);
+        return obj[property];
+      },
+      set(obj, property, value) {
+        obj[property] = value;
+        return true;
+      },
+    });
+    console.log(proxy.name);
+    proxy.name = "fsc";
+    console.log(proxy);
+  </script>
+</html>

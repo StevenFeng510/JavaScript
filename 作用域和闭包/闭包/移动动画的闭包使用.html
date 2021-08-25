@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      button {
+        position: absolute;
+      }
+    </style>
+  </head>
+  <body>
+    <button message="后盾人">button</button>
+    <button message="hdcms">hdcms</button>
+  </body>
+  <script>
+    let btns = document.querySelectorAll("button");
+    btns.forEach(function (item) {
+      //parent
+      //   let left = 1; //在父级空间定义left 解决多次点击产生的抖动现象
+      let bind = false; //解决多次点击重复触发setInterval产生的加速效果
+      item.addEventListener("click", function () {
+        if (!bind) {
+          let left = 1;
+          bind = true; //节流
+          setInterval(function () {
+            item.style.left = left++ + "px";
+          }, 1000);
+        }
+      });
+    });
+  </script>
+</html>

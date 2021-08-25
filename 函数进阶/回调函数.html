@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="btn">baidu</button>
+  </body>
+  <script>
+    //回调函数
+    document.getElementById("btn").addEventListener("click", function () {
+      alert(this.innerHTML);
+    });
+
+    let hd = [1, 2, 3, 4];
+    hd.map(function (value, index, arr) {
+      arr[index] += 10;
+    });
+    console.table(hd);
+  </script>
+</html>

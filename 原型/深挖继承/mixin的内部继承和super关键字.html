@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    function extend(sub, sup) {
+      sub.prototype = Object.create(sup.prototype);
+      Object.defineProperty(sub.prototype, "constructor", {
+        value: sub,
+        enumerable: false, //不允许constructor被遍历
+      });
+    }
+
+    const Address = {
+      getAddress() {
+        console.log("获取收货地址");
+      },
+    };
+
+    const Request = {
+      ajax() {
+        return "请求后台";
+      },
+    };
+
+    const Credit = {
+      __proto__: Request,
+      total() {
+        console.log(super.ajax() + "积分统计"); //super 指当前这个类的原型
+      },
+    };
+
+    function User(name, age) {
+      this.name = name;
+      this.age = age;
+    }
+    User.prototype.show = function () {
+      console.log(this.name, this.age);
+    };
+
+    function Admin(...args) {
+      User.apply(this, args);
+    }
+    extend(Admin, User);
+    Admin.prototype = Object.assign(Admin.prototype, Request, Credit);
+    let admin = new Admin("baidu", 18);
+    admin.show();
+    admin.total();
+
+    function Member(...args) {
+      User.apply(this, args);
+    }
+    extend(Member, User);
+    Member.prototype = Object.assign(
+      Member.prototype,
+      Request,
+      Credit,
+      Address
+    );
+    let lisi = new Member("lisi", 22);
+    lisi.getAddress();
+  </script>
+</html>

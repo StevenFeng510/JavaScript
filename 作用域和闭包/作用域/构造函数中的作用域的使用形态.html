@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    function hd() {
+      let n = 1;
+      // 构造函数也是很好的环境例子，子函数被外部使用父级环境将被保留
+      this.sum = function () {
+        console.log(++n);
+      };
+    }
+    let a = new hd();
+    a.sum();
+    let b = new hd(); //多次引用会产生不同的内存空间,即新的作用域
+    b.sum();
+  </script>
+</html>

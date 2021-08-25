@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    // "use strict";
+    const user = {
+      age: 18,
+    };
+
+    console.log(
+      JSON.stringify(Object.getOwnPropertyDescriptor(user, "age"), null, 2)
+    );
+    // //使用Object.defineProperty 方法修改属性特性
+    // Object.defineProperty(user, "name", {
+    //   value: "fsc",
+    //   writable: false, //是否可以修改
+    //   enumerable: true, //是否可以遍历
+    //   configurable: true, //能否使用delete、能否需改属性特性、或能否修改访问器属性
+    // }); //修改和添加属性特征
+    // user.name = "baidu";
+    // console.log(user.name);
+
+    //使用 Object.defineProperties 可以一次设置多个属性
+    Object.defineProperties(user, {
+      name: {
+        value: "fsc",
+        writable: false,
+        enumerable: false,
+        configurable: true,
+      },
+      age: {
+        value: "18",
+        writable: false,
+        enumerable: false,
+        configurable: false,
+      },
+    });
+    console.log(Object.keys(user));
+  </script>
+</html>

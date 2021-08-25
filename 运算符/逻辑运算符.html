@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>逻辑运算符</title>
+</head>
+
+<body>
+    <input type="text" name="password">
+    <input type="text" name="confirm_password">
+    <br />
+    <span name="msg"></span>
+    <script>
+        function query() {
+            return document.querySelector(`[name='${name}']`);
+        }
+        let inputs = document.querySelectorAll("[name='password'],[name='confirm_password']");
+        [...inputs].map(item => {
+            item.addEventListener('keyup', function () {
+                let msg = "";
+                if (query("password").value
+                    != query("confirm_password").value
+                    || query("password").value.length < 5) {
+                    msg = "两次密码不一致或密码长度小于5位";
+                }
+                query("msg").innerHTML = msg;
+            })
+        })
+    </script>
+</body>
+
+</html>

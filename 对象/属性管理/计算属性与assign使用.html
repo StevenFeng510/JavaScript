@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    // let hd = {};
+    // let name = "title";
+    // hd[name] = "baidu";
+    // console.log(hd.title);
+
+    //对象属性可以通过表达式计算定义
+    // let id = 0;
+    // let hd = {};
+    // hd[`id-${++id}`] = id;
+    // hd[`id-${++id}`] = id;
+    // hd[`id-${++id}`] = id;
+    // hd[`id-${++id}`] = id;
+    // console.log(hd);
+
+    // const lessons = [
+    //   {
+    //     title: "媒体查询响应式布局",
+    //     category: "css",
+    //   },
+    //   {
+    //     title: "FLEX 弹性盒模型",
+    //     category: "css",
+    //   },
+    //   {
+    //     title: "MYSQL多表查询随意操作",
+    //     category: "mysql",
+    //   },
+    // ];
+    // let res = lessons.reduce((obj, cur, index) => {
+    //   obj[`${cur["category"]}-${index + 1}`] = cur;
+    //   return obj;
+    // }, {});
+    // console.table(res);
+    // console.log(JSON.stringify(res, null, 2));
+
+    // let hd = Object.assign({ a: 1 }, { b: 2 });
+    // console.log(hd);
+
+    function upload(params) {
+      let options = {
+        size: 9000,
+      };
+      options = Object.assign(options, params);
+      console.log(JSON.stringify(options, null, 2));
+    }
+    upload({ size: 99, type: "jpeg" });
+  </script>
+</html>

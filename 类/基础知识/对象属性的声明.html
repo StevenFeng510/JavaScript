@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    //在 class 中定义的属性为每个new 出的对象独立创建，下面定义了 site 与 name 两个对象属性
+    class User {
+      site = "js";
+      constructor(name) {
+        this.name = name;
+      }
+      changeSite(value) {
+        this.site = value;
+      }
+      show() {
+        return `${this.site}:${this.name}`;
+      }
+    }
+    let hd = new User("baidu");
+    hd.changeSite("hello");
+    console.log(hd.show());
+  </script>
+</html>

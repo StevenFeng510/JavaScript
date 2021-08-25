@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let arr = ["hdcms", "baidu"];
+        // let keys = arr.keys();//keys 取索引
+        // let values = arr.values(); //values 取值
+
+        // let entries = arr.entries();
+        // let {
+        //     done,
+        //     value: [a, b] //使用解构语法获取内容
+        // } = entries.next();
+        // console.log(a, b); //keys values 的综合 返回数组所有键值对 
+
+        for (const [key, value] of arr.entries()) {
+            console.log(value);
+        }
+
+        // for (const value of arr.values()) { //for of 就是使用户迭代方法操作数组
+        //     console.log(value);
+        // }
+
+        // for (const key of arr.keys()) {
+        //     console.log(key);
+        // }
+
+        //done:true,value:"xxx";
+        // while (({
+        //         value,
+        //         done
+        //     } = values.next()) && done === false) {
+        //     console.log(value);
+        // };
+
+
+        // let {
+        //     value,
+        //     done
+        // } = keys.next();
+        // console.log(value, done);
+        // console.log(keys.next());
+        // console.log(keys.next());
+        // console.log(keys.next());
+    </script>
+</body>
+
+</html>

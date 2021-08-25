@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    let cart = [{
+            name: "iphone",
+            price: 12000
+        },
+        {
+            name: "imac",
+            price: 25000
+        },
+        {
+            name: "ipad",
+            price: 3600
+        }
+    ];
+
+    //找出购物车中价格最贵的
+    function maxPrice(goods) {
+        return goods.reduce(function (pre, cur) {
+            return pre.price > cur.price ? pre : cur;
+        });
+    }
+    console.log(maxPrice(cart));
+
+    //汇总购物车中商品的价格
+    function sum(goods) {
+        return goods.reduce(function (total, cur) {
+            return (total += cur["price"]);
+        }, 0)
+    }
+    console.log(sum(cart));
+
+    //获取价格超过1万元商品的名称;
+    function getNameByPrice(goods, price) {
+        return goods.reduce(function (arr, cur) {
+            if (cur.price > price) {
+                arr.push(cur);
+            }
+            return arr;
+        }, []).map(item => {
+            return item.name
+        })
+    }
+    console.table(getNameByPrice(cart, 10000));
+</script>
+
+</html>

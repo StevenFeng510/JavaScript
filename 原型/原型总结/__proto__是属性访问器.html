@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    //__proto__ getter setter
+    // let hd = { name: "baidu.com" };
+    // hd.__proto = {
+    //   show() {
+    //     console.log(this.name);
+    //   },
+    // };
+    // hd.__proto = 99;//不受影响
+    // hd.show();
+
+    // let hd = {
+    //   action: {},
+    //   get proto() {
+    //     return this.action;
+    //   },
+    //   set proto(obj) {
+    //     if (obj instanceof Object) {
+    //       this.action = obj;
+    //     }
+    //   },
+    // };
+    // hd.proto = { view: function () {} };
+    // hd.proto = "abc";
+    // console.log(hd.proto);
+
+    let hd = Object.create(null); //如果想改变__proto__的值,将原型清空即可
+    console.dir(hd);
+    hd.__proto = "baidu";
+    console.dir(hd.__proto__);
+  </script>
+</html>

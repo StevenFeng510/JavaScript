@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let arr = [1, 2, 3, 4, 5];
+
+        // function find(array, callback) {
+        //     for (const value of array) {
+        //         if (callback(value)) {
+        //             return value;
+        //         }
+        //     }
+        //     return undefined;
+        // }
+        // console.log(find(arr, function (item) {
+        //     return item == 2;
+        // }));
+
+        Array.prototype.findValue = function find(callback) {
+            for (const value of this) {
+                if (callback(value)) {
+                    return value;
+                }
+            }
+            return undefined;
+        };
+        const res = arr.findValue(function (item) {
+            return item == 2;
+        });
+        console.log(res);
+    </script>
+</body>
+
+</html>

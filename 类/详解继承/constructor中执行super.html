@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    //子类的属性优先级要高于父类 super()要写前面
+    //super() 指调用父类的构造函数
+    class User {
+      constructor(name) {
+        this.name = name;
+        this.site = "123";
+      }
+    }
+    class Admin extends User {
+      constructor(...args) {
+        super(...args);
+        this.site = "baiud.com";
+      }
+    }
+    let hd = new Admin("baidu");
+    console.log(hd);
+
+    // function User(name) {
+    //   this.name = name;
+    // }
+    // function Admin(...args) {
+    //   User.apply(this, args);
+    // }
+    // Admin.prototype = Object.create(User.prototype);
+    // let hd = new Admin("李四");
+    // console.log(hd);
+  </script>
+</html>

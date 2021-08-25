@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function div(options = {}) {
+            let div = document.createElement("div");
+            div.style.width = options.width ? options.width : "100px";
+            div.style.height = options.height ? options.height : "100px";
+            div.style.backgroundColor = options.backgroundColor ? options.backgroundColor : "red";
+            document.body.appendChild(div);
+        }
+        div({ width: '300px', height: '60px', backgroundColor: 'gray' });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    const data = [
+      { name: "js", price: 100 },
+      { name: "mysql", price: 212 },
+      { name: "vue.js", price: 98 },
+    ];
+    class Lesson {
+      constructor(data) {
+        this.model = data;
+      }
+      //获取价格方法(访问器)
+      get price() {
+        return this.model.price;
+      }
+      //获取名字(访问器)
+      get name() {
+        return this.model.name;
+      }
+      //统计价格的静态方法
+      static totalPrice(data) {
+        return data.reduce((t, c) => {
+          return t + c.price;
+        }, 0);
+      }
+      //获取全部课程数据的静态方法
+      static createBatch(data) {
+        return data.map((item) => new Lesson(item));
+      }
+      //获取最贵课程的静态方法
+      static maxPrice(data) {
+        return data.sort((a, b) => b.price - a.price)[0];
+      }
+    }
+    let lessons = Lesson.createBatch(data);
+    console.log(lessons);
+    console.log(Lesson.maxPrice(lessons).name);
+    console.log(Lesson.totalPrice(lessons));
+  </script>
+</html>

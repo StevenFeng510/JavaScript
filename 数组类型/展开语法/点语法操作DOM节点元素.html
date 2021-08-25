@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        .hide {
+            display: none;
+        }
+    </style>
+    <div>hdcms</div>
+    <div>www.baidu.com</div>
+    <script>
+        //DOM元素按照数组方式操作
+        const div = document.querySelectorAll("div");
+        console.log("div");
+
+        //Array.from将节点元素转换成数组来进行操作
+        Array.from(div).map(function (item) {
+            console.log(item);
+        });
+
+        //原型链方法
+        Array.prototype.map.call(div, function (item) {
+            console.log(item);
+        });
+
+        //展开操作
+        [...div].map(function (item) {
+            item.addEventListener("click", function () {
+                this.classList.toggle("hide");
+            })
+        });
+    </script>
+</body>
+
+</html>

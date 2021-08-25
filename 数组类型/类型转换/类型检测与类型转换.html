@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>hdcms</div>
+    <div>baidu</div>
+    <script>
+        let divs = document.querySelectorAll("div");
+        console.log(
+            //from还有第二个参数,对其中的每一个元素使用
+            Array.from(divs, function (item) {
+                console.log(item.innerHTML);
+                item.style.backgroundColor = "red";
+                return item;
+            }));
+        // console.log(Array.isArray());//检测是否为数组;
+        // let hd = [1, 2, 3, 4].toString();
+        // let hd = [1, 2, 3, 4].join("-");
+        // console.log(location.href + "?id=" + hd);
+        // console.log(typeof hd);
+        // console.log(hd);
+
+        // let str = "hdcms,baidu.com";
+        // console.log(str.split(","));
+        // console.log(Array.from(str));//拆分数组
+
+
+        // let obj = {
+        //     0: "hdcms",
+        //     1: "baidu",
+        //     length: 2        //长度属性
+        // };
+        // console.log(Array.from(obj));
+    </script>
+</body>
+
+</html>

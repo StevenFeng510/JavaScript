@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let arr = ["hdcms", "baidu"];
+        let hd = ["js", "css"];
+        arr = [...arr, ...hd];
+        console.log(arr);
+
+
+        function sum(...args) {
+            // console.log(args);
+            return args.reduce((s, v) => {
+                return (s += v);
+            }, 0)
+
+        }
+        console.log(sum(1, 232, 3, 4));
+        // for (const value of hd) {
+        //     arr.push(value); //往数组中追加元素
+        // }
+        // console.table(arr);
+    </script>
+</body>
+
+</html>

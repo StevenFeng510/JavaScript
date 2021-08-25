@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    // let arr = [1, 2, 3];
+    // let a = [...arr, 5, 6, 7];
+    // console.log(a);
+
+    // let user = { name: "baidu", age: 22 };
+    // let hd = { ...user, score: 90 };
+    // console.log(hd);
+
+    function upload(params) {
+      let config = {
+        type: "*.jpeg,*.png",
+        size: 10000,
+      };
+      config = { ...config, ...params };
+      console.log(config);
+    }
+    console.log(upload({ size: 99, type: "*.gif" }));
+  </script>
+</html>

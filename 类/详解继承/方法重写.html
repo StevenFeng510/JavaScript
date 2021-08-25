@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    class Controller {
+      sum() {
+        return this.data.reduce((t, c) => t + c.price, 0);
+      }
+      getBykey(key) {
+        return this.data.filter((item) => item.name.includes(key));
+      }
+    }
+    class Lesson extends Controller {
+      constructor(data) {
+        super();
+        this.data = data;
+      }
+      info() {
+        return {
+          totalPrice: super.sum(), //super调用父级方法  原型链攀升
+          data: this.data,
+        };
+      }
+      getBykey(key) {
+        return super.getBykey(key).map((item) => item.name);
+      }
+    }
+    let data = [
+      { name: "js", price: 100 },
+      { name: "mysql", price: 212 },
+      { name: "vue.js", price: 98 },
+    ];
+    let hd = new Lesson(data);
+    console.log(hd.getBykey("js"));
+  </script>
+</html>

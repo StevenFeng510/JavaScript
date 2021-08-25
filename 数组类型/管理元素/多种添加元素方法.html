@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let array = ["hdcms", "baidu.com"];
+        array.push("shop", "js", "php");
+        let hd = ["shop", "boy"];
+        array.push(...hd);
+        console.table(array);
+
+        // array[array.length] = "cms";
+        // console.log(array);
+
+        // let hd = ["shop", "cms"];
+        // console.log(array);
+
+        //随机按顺序创建数组元素
+        function rangeArray(begin, end) {
+            const array = [];
+            for (i = begin; i <= end; i++) {
+                array.push(i);
+            }
+            return array;
+        }
+        console.table(rangeArray(1, 5));
+    </script>
+</body>
+
+</html>

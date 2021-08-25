@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    //原型的继承,而不是改变构造函数的原型
+    function User() {}
+    User.prototype.name = function () {
+      console.log("user name methods");
+    };
+    // let hd = new User();
+    // hd.name();
+
+    function Admin() {}
+    // console.dir(Admin);
+    Admin.prototype = Object.create(User.prototype); // 该方式重新创建了新的原型
+    // Admin.prototype.constructor = Admin;
+
+    console.log(Object.getOwnPropertyDescriptors(Admin.prototype));
+    // Admin.prototype.__proto__ = User.prototype;  // 该方式继承改变原来原型对象的父级,同时会保留现有的原型
+
+    Object.defineProperty(Admin.prototype, "constructor", {
+      value: Admin,
+      enumerable: false, //设置不可遍历
+    });
+    Admin.prototype.role = function () {
+      console.log("admin.role");
+    };
+
+    let a = new Admin(); //两种集成方法需要注意创建new对象的代码顺序
+    // let b = new a.__proto__.constructor();
+    // console.log(b.__proto__);
+    for (const key in a) {
+      console.log(key);
+    }
+
+    function Member() {}
+    Member.prototype.__proto__ = User.prototype;
+    Member.prototype.role = function () {
+      console.log("member.role");
+    };
+
+    // let b = new Member();
+    // b.role();
+  </script>
+</html>

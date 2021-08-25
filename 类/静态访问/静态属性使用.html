@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    // function Web(url) {
+    //   this.url = url;
+    // }
+    // Web.url = "hdcms.com";
+    // let hd = new Web("www.baidu.com");
+    // console.log(hd);
+    // console.dir(Web);
+
+    //静态属性即为类设置属性，而不是为生成的对象设置
+    class Request {
+      static host = "http://www.baidu.com"; //静态属性  为所有对象使用
+      api(url) {
+        return Request.host + `/${url}`;
+      }
+    }
+    let obj = new Request();
+    console.log(obj.api("article"));
+    // console.log(obj);
+    // console.dir(Request);
+    // obj.host = "http://www.123.com";
+    // console.log(obj);
+    // let obj2 = new Request();
+
+    // console.log(obj2);
+  </script>
+</html>

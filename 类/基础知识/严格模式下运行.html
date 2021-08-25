@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    // "use strict";
+    // function show() {
+    //   console.log(this);
+    // }
+    // show();
+
+    // function User() {}
+    // User.prototype.show = function () {
+    //   function test() {
+    //     console.log(this); //这里的this 指的是window
+    //   }
+    //   test();
+    // };
+    // let U = new User();
+    // U.show();
+
+    //class 默认使用strict 严格模式执行
+    class Hd {
+      show() {
+        function test() {
+          console.log(this);
+        }
+        test();
+      }
+    }
+    let U = new Hd();
+    U.show();
+  </script>
+</html>

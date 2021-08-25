@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    // function User() {}
+    // function Admin() {}
+    // Admin.prototype = Object.create(User.prototype);
+    // let hd = new Admin();
+    // // console.log(hd instanceof Admin);
+    // // console.log(hd instanceof User);
+    // // console.log(hd.__proto__ == Admin.prototype);
+
+    // function checkPrototype(obj, constructor) {
+    //   if (!obj.__proto__) return false;
+    //   if (obj.__proto__ == constructor.prototype) return true;
+    //   return checkPrototype(obj.__proto__, constructor.prototype);
+    // }
+    // console.log(checkPrototype(hd, Admin));
+
+    class User {}
+    class Admin extends User {}
+    let hd = new Admin();
+    console.log(hd instanceof Admin);
+  </script>
+</html>

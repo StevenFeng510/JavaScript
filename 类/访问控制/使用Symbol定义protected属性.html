@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    //protected
+    //使用 Symbol定义私有访问属性，即在外部通过查看对象结构无法获取的属性
+    const protecteds = Symbol();
+    class Common {
+      //   [Host] = "http://www.baidu.com";
+      constructor() {
+        this[protecteds] = {};
+        this[protecteds].host = "http://www.baidu.com";
+      }
+      set host(url) {
+        if (!/^http?:/i.test(url)) {
+          throw new Error("地址错误");
+        }
+        this[protecteds].host = url;
+      }
+      //想让外部访问就加上getter访问器 不加getter外部就无法访问
+      get host() {
+        return this[protecteds].host;
+      }
+    }
+    class User extends Common {
+      constructor(name) {
+        super(); //在子类中调用父类  super关键字
+        this[protecteds].name = name;
+      }
+      get name() {
+        return this[protecteds].name;
+      }
+    }
+    let hd = new User("lisi");
+    hd.host = "http://www.sina.com.cn";
+    console.log(hd.name);
+  </script>
+</html>

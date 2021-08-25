@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    // function avg(total, year = 1) {
+    //   return Math.round(total / year);
+    // }
+    // console.log(avg(2000));
+
+    // function sortArray(array, type = "asc") {
+    //   //升序
+    //   return array.sort(function (a, b) {
+    //     return type == "asc" ? a - b : b - a;
+    //   });
+    // }
+    // console.log(sortArray([2, 3, 9, 4, 5, 8, 7, 6]));
+
+    function sum(total, discount = 0, dis = 0) {
+      return total * (1 - discount) * (1 - dis);
+    }
+    console.log(sum(1000, 0.2, 0.3));
+  </script>
+</html>

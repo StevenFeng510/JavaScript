@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button>www.baidu.com</button>
+    <button>hdcms.com</button>
+  </body>
+  <script>
+    let Dom = {
+      site: "baidu",
+      //使用handleEvent绑定事件处理器时，this指向当前对象而不是DOM元素。
+      handleEvent: function (event) {
+        console.log(this.site + event.target.innerHTML);
+      },
+      bind: function () {
+        let buttons = document.querySelectorAll("button");
+        // console.log(buttons.length);
+        buttons.forEach((elem) => {
+          elem.addEventListener("click", (event) => {
+            console.log(this.site + event.target.innerHTML);
+          });
+        });
+        // const button = document.querySelector("button");
+        // console.log(button);
+        // button.addEventListener("click", this);
+      },
+    };
+    Dom.bind();
+    // bind: function () {
+    //     const button = document.querySelector("button");
+    //     // console.log(button);
+    //     button.addEventListener("click", (event) => {
+    //       //   console.log(this.site);
+    //       console.log(this.site + event.target.innerHTML);
+    //     });
+    //   },
+    // };
+
+    // let Lesson = {
+    //   site: "baidu",
+    //   lists: ["js", "css", "mysql"],
+    //   show: function () {
+    //     // console.log(this);
+    //     return this.lists.map((title) => `${this.site}-${title}`);
+    //     // 箭头函数中的this 会继承定义函数时的上下文，可以理解为和外层函数指向同一个this
+    //   },
+    // };
+    // console.table(Lesson.show());
+  </script>
+</html>

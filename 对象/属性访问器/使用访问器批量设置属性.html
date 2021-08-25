@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    "use strict";
+    const web = {
+      name: "fsc",
+      url: "www.baidu.com",
+      get site() {
+        return `${this.name}的网址是${this.url}`;
+      },
+      set site(value) {
+        console.log(value);
+        [this.name, this.url] = value.split(",");
+      },
+    };
+    // web.name = "hdcms";
+    // web.url = "hdcms.com";
+    web.site = "开源产品,www.hdcms.com";
+    console.log(web.site);
+  </script>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    "use strict";
+    const user = {
+      name: "baidu",
+      age: 18,
+    };
+    Object.freeze(user);
+    console.log(
+      JSON.stringify(Object.getOwnPropertyDescriptors(user), null, 2)
+    );
+    // user.site = "www.baiud.com";
+    console.log(Object.isFrozen(user)); //是否处于冻结状态
+  </script>
+</html>

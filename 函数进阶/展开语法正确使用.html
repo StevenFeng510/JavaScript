@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    //收   放
+    let hd = [1, 2, 3];
+    // let [a, b, c] = [...hd];
+    // console.log([...hd]);
+
+    // let [a, ...edu] = [1, 2, 3, 4];
+    // console.log(edu);
+
+    // function sum(...args) {
+    //   console.log(args);
+    //   return args.reduce((a, b) => a + b);
+    // }
+    // console.log(sum(1, 2, 3, 4));
+
+    function sum(discount = 0, ...price) {
+      //   console.log(price);
+      let total = price.reduce((a, b) => a + b);
+      return Math.round(total * (1 - discount));
+    }
+    console.log(sum(0.2, 1999, 2900, 7800));
+  </script>
+</html>

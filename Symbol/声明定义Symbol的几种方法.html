@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // Symbol用于防止属性名冲突而产生的，比如向第三方对象中添加属性时。
+    // let hd = Symbol("baidu123");
+    // let edu = Symbol("www.baidu.com");
+    // console.log(hd.description);//获取传入的描述参数
+
+    let cms = Symbol.for("baidu"); //使用Symbol.for会在系统中将Symbol登记
+    console.log(cms);
+    console.log(Symbol.keyFor(cms)); //根据使用Symbol.for登记的Symbol返回描述，如果找不到返回undefined 。
+</script>
+
+</html>

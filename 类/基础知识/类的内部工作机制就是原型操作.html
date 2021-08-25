@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    class User {
+      constructor(name) {
+        this.name = name;
+      }
+      show() {}
+    }
+    let U = new User("js");
+    console.log(Object.getOwnPropertyNames(U));
+    // console.dir(U);
+    // console.log(User === User.prototype.constructor);
+    function Hd(name) {
+      this.name = name;
+    }
+    let H = new Hd("vip");
+    console.log(Object.getOwnPropertyNames(H));
+
+    // console.dir(H);
+    // console.dir(Hd);
+  </script>
+</html>

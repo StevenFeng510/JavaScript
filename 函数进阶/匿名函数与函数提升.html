@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // let hd = function () {//匿名函数不会被提升
+    //     console.log("houdun");
+    // };
+    // hd();
+
+    // show(); //函数提升   
+
+    // function show() {
+    //     console.log("baidu.com");
+    // };
+
+
+    function sum(...args) {
+        // console.log(args);
+        return args.reduce((a, b) => a + b);
+    };
+    console.log(sum(1, 2, 2, 3, 4, 5));
+</script>
+
+</html>

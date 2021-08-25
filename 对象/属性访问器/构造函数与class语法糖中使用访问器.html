@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    "use strict";
+    const DATA = Symbol();
+    class User {
+      constructor(name, age) {
+        this[DATA] = { name, age };
+      }
+      get name() {
+        return this[DATA].name;
+      }
+      set name(value) {
+        if (value.trim() == "" || value.length > 20) {
+          throw new Error("用户名格式不对");
+        }
+        this[DATA].name = value;
+      }
+      get age() {
+        return this[DATA].age;
+      }
+      set age(value) {
+        this[DATA].age = age;
+      }
+    }
+
+    // function User(name, age) {
+    //   //   this.name = name;
+    //   //   this.age = age;
+    //   let data = { name, age };
+    //   // 使用 defineProperty 可以模拟定义私有属性，从而使用面向对象的抽象特性。
+    //   Object.defineProperties(this, {
+    //     name: {
+    //       get() {
+    //         return data.name;
+    //       },
+    //       set(value) {
+    //         if (value.trim() == "" || value.length > 20) {
+    //           throw new Error("用户名格式不对");
+    //         }
+    //         data.name = value;
+    //       },
+    //     },
+    //     age: {
+    //       get() {
+    //         return data.age;
+    //       },
+    //       set(value) {
+    //         data.age = age;
+    //       },
+    //     },
+    //   });
+    // }
+    let hd = new User("hdcms", 29);
+    // hd.name = "hd";
+    console.log(hd.name);
+  </script>
+</html>

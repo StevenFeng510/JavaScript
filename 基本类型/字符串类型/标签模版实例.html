@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        // let lesson = 'css';
+        // let web = '后盾人';
+        // tag `访问${web}学习${lesson}前端知识`;
+
+        // function tag(strings, ...values) {
+        //     console.log(strings); //["访问", "学习", "前端知识"]
+        //     console.log(values); // ["后盾人", "css"]
+        // }
+
+        let lessons = [{
+                title: "后盾人媒体查询响应式布局",
+                author: "后盾人向军"
+            },
+            {
+                title: "FLEX 弹性盒模型",
+                author: "后盾人"
+            },
+            {
+                title: "GRID 栅格系统后盾人教程",
+                author: "古老师"
+            }
+        ];
+
+        function template() { //使用标签对元素进行替换 替换成带有链接的字符串
+            return `<ul>
+                ${lessons
+                    .map(
+                    item => links`<li>作者:${item.author},
+                    课程:${item.title}</li>`
+                    )
+                    .join("")}
+                </ul>`; //join 添加连接符
+        }
+
+        function links(strings, ...vars) {
+            return strings
+                .map((str, key) => {
+                    return str + (vars[key] ?
+                        vars[key].replace('后盾人', `<a href="http://wwww.baidu.com">后盾人</a>`) :
+                        "");
+                })
+            join("");
+        };
+        document.body.innerHTML += template();
+    </script>
+</body>
+
+</html>

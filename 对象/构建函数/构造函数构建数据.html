@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    //大部分数据类型都是通过构造函数创建的
+    // let o = {};
+    // console.log(o);
+    let o = new Object();
+    o.name = "baidu";
+    console.log(o);
+
+    let n = new Number(1);
+    console.log(n.valueOf());
+
+    let s = new String("baidu");
+    console.log(s.valueOf());
+
+    let b = new Boolean(true);
+    console.log(typeof b.toString());
+    console.log(b.valueOf());
+
+    let d = new Date();
+    console.log(d.valueOf());
+
+    let r = new RegExp("\\d+");
+    console.log(r.valueOf());
+    console.log(r.test(99));
+
+    function hd() {}
+    console.log(hd.constructor);
+
+    let User = new Function(
+      "name",
+      `
+        this.name = name;
+        this.show = function(){
+            console.log(this.name);
+        }
+    `
+    );
+    let u = new User("baidu");
+    u.show();
+  </script>
+</html>

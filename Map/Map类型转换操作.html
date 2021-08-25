@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    let hd = new Map([
+        ["hdcms", "kaiyuan"],
+        ["baidu", "开源系统"]
+    ]);
+    //a => b => a
+    console.table([...hd]); //点语法转换成数组类型
+    // console.log([...hd.keys()]);
+    // console.log([...hd.values()]);
+    // console.log([...hd.entries()]);
+
+    //等同于[...hd.entries()]
+    // for (const [key, value] of hd) {
+    //     console.log(key, value);
+    // }
+
+    let newArray = [...hd].filter(item => {
+        return item[1].includes("开源系统");
+    });
+    let edu = new Map(newArray);
+    console.log([...edu.values()]);
+</script>
+
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function star(row = 5) {
+            let star = 0;
+            do {
+                let n = 0;
+                do {
+                    document.write("*");
+                } while (++n < star);   //双循环嵌套
+                document.write("<br/>");
+            } while (++star < row);
+        }
+        star(100);
+    </script>
+</body>
+
+</html>

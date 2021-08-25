@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    let hd = {
+      name: "baidu",
+      lesson: {
+        title: "js",
+      },
+    };
+    let {
+      name,
+      lesson: { title },
+    } = hd;
+    console.log(name, title); //多层对象的解构
+  </script>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    //模块  定义模块
+    let module = (function () {
+      const moduleList = {};
+      function define(name, modules, action) {
+        modules.map((m, i) => {
+          modules[i] = moduleList[m];
+        });
+        moduleList[name] = action.apply(null, modules);
+        // console.log(moduleList);
+      }
+      return { define };
+    })();
+
+    //模块定义
+    module.define("hd", [], function () {
+      return {
+        first(arr) {
+          return arr[0];
+        },
+        max(arr, key) {
+          return arr.sort((a, b) => b[key] - a[key])[0];
+        },
+      };
+    });
+
+    //模块的依赖
+    module.define("lessons", ["hd"], function (hd) {
+      let data = [
+        { name: "baidu", price: 199 },
+        { name: "mysql", price: 211 },
+      ];
+      console.log(hd.max(data, "price"));
+    });
+
+    module.define("a", [], function () {
+      return {
+        site: "baidu",
+        url: "baidu.com",
+      };
+    });
+
+    module.define("b", ["a"], function (a) {
+      console.log(a);
+    });
+  </script>
+</html>

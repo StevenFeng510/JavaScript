@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div desc="baidu">在线学习</div>
+    <div desc="hdcms">开源产品</div>
+  </body>
+  <script>
+    let divs = document.querySelectorAll("div");
+    divs.forEach(function (item) {
+      let desc = item.getAttribute("desc");
+      item.addEventListener("click", function () {
+        // console.log(item.getAttribute("desc"));
+        console.log(desc);
+        console.log(item);
+      });
+      item = null; //将item 赋值为空 清楚不必要的数据
+    });
+  </script>
+</html>

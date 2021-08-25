@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    // "use strict";
+    const user = {
+      name: "baidu",
+      age: 18,
+    };
+    Object.preventExtensions(user); //禁止向对象添加属性
+    if (Object.isExtensible(user)) {
+      //Object.isExtensible 判断是否能向对象中添加属性
+      user.site = "www.baidu.com";
+    }
+    console.log(user);
+  </script>
+</html>

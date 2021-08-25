@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    const protecteds = new WeakMap();
+    class Comment {
+      constructor() {
+        protecteds.set(this, {
+          host: "http://www.baidu.com",
+        });
+      }
+      set host(url) {
+        if (!/^http?:/i.test(url)) {
+          throw new Error("地址错误");
+        }
+        protecteds.set(this, { ...protecteds.get(this), url });
+      }
+      get host() {
+        return protecteds.get(this)["host"];
+      }
+    }
+    class User extends Comment {
+      constructor(name) {
+        super();
+        this.name = name;
+      }
+      set name(value) {
+        protecteds.set(this, { ...protecteds.get(this), name: value });
+      }
+      get name() {
+        return protecteds.get(this)["name"];
+      }
+    }
+    // let hd = new User("lisi");
+    // hd.name = "baidu";
+    // console.log(hd.name);
+
+    let xj = new User("xj");
+    console.log(xj);
+    xj.name = "baidu";
+    console.log(xj.name);
+    xj.host = "http://www.sina.com.cn";
+    // host.set(xj, "http://www.sina.com.cn");
+    console.log(xj.host);
+  </script>
+</html>

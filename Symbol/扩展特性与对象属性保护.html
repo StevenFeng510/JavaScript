@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    let symbol = Symbol("这是一个Symbol类型");
+    let hd = {
+        name: "baidu",
+        [symbol]: "www.baidu.com"
+    }
+    // for (const key in hd) {
+    //     console.log(key);
+    // }
+    // for (const key of Object.getOwnPropertySymbols(hd)) {
+    // //可以使用 Object.getOwnPropertySymbols 获取所有Symbol属性
+    //     console.log(key);
+    // }
+
+    // //遍历所有属性的方法
+    // for (const key of Reflect.ownKeys(hd)) {
+    //  //可以使用 Reflect.ownKeys(obj) 获取所有属性包括Symbol
+    //     console.log(key);
+    // }
+
+    //对象不想被遍历是,可以使用symbol保护(隐藏)
+    let site = Symbol("这是一个Symbol");
+    class User {
+        constructor(name) {
+            this.name = name;
+            this[site] = "baidu";
+        }
+        getName() {
+            return `${this[site]}${this.name}`
+        }
+    }
+    let edu = new User("李四");
+    // console.log(edu.getName());
+    for (const key in edu) { //无法遍历到site属性
+        console.log(key);
+    }
+</script>
+
+</html>

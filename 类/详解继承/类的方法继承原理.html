@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    // function User() {}
+    // User.prototype.show = function () {
+    //   console.log("houdun");
+    // };
+    // function Admin() {}
+    // Admin.prototype = Object.create(User.prototype);
+    // // console.dir(Admin);
+    // let hd = new Admin();
+    // hd.show();
+
+    class User {
+      show() {
+        console.log("baidu");
+      }
+    }
+    class Admin extends User {
+      constructor(name) {
+        super();
+        this.name = name;
+      }
+    }
+    let hd = new Admin("123");
+    hd.show();
+    console.log(hd);
+  </script>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // let set = new Set(["hdcms", "baidu.com"]);
+    //使用点语法 或 Array.form 静态方法将Set类型转为数组，这样就可以使用数组处理函数了
+    // console.log(Array.from(set));
+    // console.log([...set]);
+
+
+    // let hd = new Set("123456789");
+    // let arr = [...hd].filter(function (item) {
+    //     return item < 5;
+    // });
+    // hd = new Set(arr);
+    // console.log(hd);
+
+    //利用set类型去除数组中的重复值
+    let array = [1, 2, 2, 2, 3, 4, 5, 2, 3, 4, 1];
+    array = [...new Set(array)];
+    console.log(array);
+</script>
+
+</html>

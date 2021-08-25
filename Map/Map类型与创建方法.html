@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    let obj = {
+        name: "baidu.com",
+    }
+    // console.log(obj.name);
+    let hd = {
+        [obj]: "baidu"
+    };
+    // console.log(hd[obj.toString()]);
+
+    //Map
+    // let map = new Map();
+    // map.set("name", "baidu");
+    // map.set(function () {}, "hdcms");
+    // map.set({}, "houdun");
+    // map.set(1, "sina.com.cn")
+    // console.log(map);
+
+    let map = new Map([
+        ["hdcms", "kaiyuan"],
+        ["baidu", "在线教程"]
+    ]);
+    map.set("name", "baidu").set("site", "百度") //链式操作
+    console.log(map);
+</script>
+
+</html>

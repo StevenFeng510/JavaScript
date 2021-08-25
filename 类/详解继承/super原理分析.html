@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    //super
+    // class User {
+    //   show() {
+    //     console.log(this.name);
+    //   }
+    // }
+    // class Admin extends User {
+    //   constructor(name) {
+    //     super();
+    //     this.name = name;
+    //   }
+    //   show() {
+    //     super.show();
+    //   }
+    // }
+    // // console.dir(Admin);
+    // let hd = new Admin("baidu");
+    // hd.show();
+
+    //多重继承
+    let common = {
+      show() {
+        console.log("common.show" + "/" + this.name);
+      },
+    };
+
+    // super 是用来查找当前对象的原型，而不像上面使用 this 查找原型造成死循环
+    // 也就是说把查询原型方法的事情交给了 super，this 只是单纯的调用对象在各个继承中使用
+    let hd = {
+      __proto__: common,
+      name: "hd.name",
+      show() {
+        super.show();
+        // console.log(this);
+        // console.log("hd.show");
+      },
+    };
+    let xj = {
+      __proto__: hd,
+      name: "xj.name",
+      show() {
+        super.show();
+        // this.__proto__.show.call(this);
+        // console.log("xj.show");
+      },
+    };
+    xj.show();
+  </script>
+</html>

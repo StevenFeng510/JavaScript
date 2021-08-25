@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    let hd = {};
+    hd.name = "baidu";
+    hd.show = function (name) {
+      console.log(name);
+    };
+
+    // 封装与抽象
+    function User(name, age) {
+      let data = { name, age }; //抽象  将属性封装到内部
+      let info = function () {
+        return data.age > 50 ? "老年" : "青年";
+      };
+      this.show = function () {
+        console.log(data.name + info());
+      };
+    }
+    let bj = new User("hdcms", 60);
+    // this.name = "后盾";
+    bj.info = function () {
+      //外部无法改变info
+      return "";
+    };
+    bj.show();
+  </script>
+</html>

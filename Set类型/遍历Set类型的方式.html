@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    let set = new Set(["hdcms", "baidu.com"]);
+    console.log(set.values()); //遍历set类型
+    console.log(set.keys());
+    console.log(set.entries()); //entries()遍历得到值和键
+
+    set.forEach(function (value, key, arr) {
+        console.log(arr);
+    });
+
+    for (const value of set) {
+        console.log(value);
+    }
+</script>
+
+</html>

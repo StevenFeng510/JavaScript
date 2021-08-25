@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: content-box;
+      }
+      body {
+        padding: 30px;
+      }
+      .slide {
+        width: 300px;
+        display: flex;
+        flex-direction: column;
+        /* box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3); */
+      }
+      .slide dt {
+        height: 30px;
+        background: #34495e;
+        color: white;
+        display: flex;
+        align-items: center;
+        padding-left: 10px;
+        cursor: pointer;
+      }
+      .slide dt:first-of-type {
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+      }
+      .slide dd {
+        height: 100px;
+        background: #f1c40f;
+        overflow: hidden;
+      }
+      .slide dd div {
+        padding: 10px;
+      }
+      .slide dd:last-of-type {
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="slide s1">
+      <dt>baidu</dt>
+      <dd>
+        <div>baidu.com</div>
+      </dd>
+      <dt>baidu</dt>
+      <dd>
+        <div>hdcms.com</div>
+      </dd>
+      <dt>js</dt>
+      <dd>
+        <div>hdcms.com</div>
+      </dd>
+    </div>
+  </body>
+  <script>
+    //动画管理类
+    class Animation {
+      constructor(el) {
+        this.el = el;
+        this.timeout = 5;
+        this.isShow = true;
+        this.defaultHeight = this.height;
+        console.log(this.defaultHeight);
+      }
+      hide(callback) {
+        this.isShow = false;
+        let id = setInterval(() => {
+          if (this.height <= 0) {
+            clearInterval(id);
+            callback && callback();
+            return;
+          }
+          this.height = this.height - 1;
+        }, this.timeout);
+      }
+      show(callback) {
+        this.isShow = false;
+        let id = setInterval(() => {
+          if (this.height >= this.defaultHeight) {
+            clearInterval(id);
+            callback && callback();
+            return;
+          }
+          this.height = this.height + 1;
+        }, this.timeout);
+      }
+      get height() {
+        return window.getComputedStyle(this.el).height.slice(0, -2) * 1; //*1变成数值类型
+      }
+      set height(height) {
+        this.el.style.height = height + "px";
+      }
+    }
+    //容器管理类
+    class slide {
+      constructor(el) {
+        this.el = document.querySelector(el); //得到整个选项卡区域
+        this.links = this.el.querySelectorAll("dt"); //得到选项卡标题
+        this.panels = [...this.el.querySelectorAll("dd")].map(
+          (item) => (item = new Panel(item))
+        ); //得到选项卡面板 将每个面板变为对象
+        this.bind();
+      }
+      bind() {
+        this.links.forEach((item, i) => {
+          item.addEventListener("click", () => {
+            this.action(i);
+          });
+        });
+      }
+      action(i) {
+        Panel.hideAll(Panel.filter(this.panels, i), () => {
+          this.panels[i].show();
+        });
+      }
+    }
+    //面板控制类 批量执行动画
+    class Panel extends Animation {
+      static num = 0;
+      static hideAll(items, callback) {
+        items.forEach((item) => {
+          Panel.num++;
+          item.hide(() => {
+            Panel.num--;
+          });
+        });
+        callback && callback();
+      }
+      static filter(items, i) {
+        return items.filter((item, index) => index != i);
+      }
+    }
+    let hd = new slide(".s1");
+  </script>
+</html>

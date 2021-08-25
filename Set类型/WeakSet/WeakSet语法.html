@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div></div>
+    <div></div>
+</body>
+<script>
+    //WeakSet结构同样不会存储重复的值，它的成员必须只能是对象类型的值
+    // let set = new WeakSet();
+    // set.add(["hdcms", "baidu.com"])
+
+    let nodes = new WeakSet();
+    let divs = document.querySelectorAll("div");
+    divs.forEach(function (item) {
+        nodes.add(item);
+    });
+    nodes.delete(divs[0]);
+    console.log(nodes.has(divs[0]));
+    console.log(nodes);
+</script>
+
+</html>

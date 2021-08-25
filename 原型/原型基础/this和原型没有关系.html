@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    //this 不受原型继承影响，this 指向调用属性时使用的对象。
+    let hd = {
+      name: "baidu",
+    };
+    let User = {
+      name: "js",
+      show() {
+        console.log(this.name);
+      },
+    };
+    Object.setPrototypeOf(hd, User);
+    hd.show();
+  </script>
+</html>

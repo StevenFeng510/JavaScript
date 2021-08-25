@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    let title = "baidu"; //影响全局环境
+    function show() {
+      let url = "baidu.com"; //作用在show函数的范围
+      function hd() {
+        let site = "hdcms";
+        console.log(url); //子函数被使用时父级环境将被保留,可以访问上一级的url
+      }
+      hd();
+    }
+    // show();
+    show(); //函数每次调用都会创建一个新作用域
+  </script>
+</html>

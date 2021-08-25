@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    //mixin 混合模式
+    //mixin 类是一个包含许多供其它类使用的方法的类
+    //mixin 类不用来继承做为其它类的父类
+    let Tool = {
+      max(key) {
+        return this.data.sort((a, b) => b[key] - a[key])[0];
+      },
+    };
+    let Arr = {
+      count(key) {
+        return this.data.reduce((t, c) => t + c[key], 0);
+      },
+    };
+    class Lesson {
+      constructor(lessons) {
+        this.lessons = lessons;
+      }
+      get data() {
+        return this.lessons;
+      }
+    }
+    const data = [
+      { name: "js", price: 100, click: 188 },
+      { name: "mysql", price: 212, click: 877 },
+      { name: "vue.js", price: 98, click: 989 },
+    ];
+    Object.assign(Lesson.prototype, Tool, Arr);
+    let hd = new Lesson(data);
+    console.log(hd.max("click"));
+    console.log(hd.count("price"));
+  </script>
+</html>

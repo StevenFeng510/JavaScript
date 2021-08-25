@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    function User(name, age) {
+      this.name = name;
+      this.age = age;
+    }
+    User.prototype.show = function () {
+      console.log(this.name, this.age);
+    };
+
+    function Admin(...args) {
+      //   User.call(this, name, age);
+      User.apply(this, args);
+    }
+    Admin.prototype = Object.create(User.prototype);
+    let xj = new Admin("baidu", 89);
+    xj.show();
+
+    function Member(...args) {
+      User.apply(this, args);
+    }
+    Member.prototype = Object.create(User.prototype);
+    let lisi = new Member("keyu", 17);
+    lisi.show();
+    console.log(lisi);
+  </script>
+</html>

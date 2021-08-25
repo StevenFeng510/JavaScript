@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let arr = [1, 2, 5, 7, 3, 4];
+        // arr = arr.sort(function (a, b) {
+        //     // -1 从小到大  1 正数  从大到小
+        //     return a - b;
+        // });
+        // console.table(arr);
+
+        let cart = [{
+                name: "iphone",
+                price: 12000
+            },
+            {
+                name: "imac",
+                price: 18000
+            },
+            {
+                name: "ipad",
+                price: 3200
+            }
+        ]
+        //商品按价格降序或升序
+        cart = cart.sort(function (a, b) {
+            return b.price - a.price;
+        });
+        console.table(cart);
+    </script>
+</body>
+
+</html>

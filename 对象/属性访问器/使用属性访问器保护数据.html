@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    "use strict";
+    const user = {
+      data: { name: "baidu", age: 18 },
+      set age(value) {
+        //setter方法用于设置属性
+        if (typeof value != "number" || value < 10 || value > 100) {
+          throw new Error("年龄格式错误");
+        }
+        this.data.age = value;
+      },
+      get age() {
+        //getter方法用于获得属性值
+        // console.log("get...");
+        return this.data.age + "岁";
+      },
+    };
+    user.age = 87;
+    // user.age = 1999;
+    console.log(user.age);
+  </script>
+</html>

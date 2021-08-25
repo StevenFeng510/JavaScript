@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    //伪块作用域  闭包
+    for (let i = 1; i <= 3; i++) {
+      (function (a) {
+        setInterval(function () {
+          console.log(i);
+        }, 1000);
+      })(i);
+    }
+  </script>
+</html>

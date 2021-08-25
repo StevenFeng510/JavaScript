@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    class User {
+      //public
+      //将属性定义为以 _ 开始，来告诉使用者这是一个私有属性，请不要在外部使用。
+      //外部修改私有属性时可以使用访问器 setter 操作
+
+      _url = "http://www.baidu.com";
+      constructor(name) {
+        this.name = name;
+      }
+      set url(url) {
+        if (!/^http?:/i.test(url)) {
+          throw new Error("地址错误");
+        }
+        this._url = url;
+      }
+    }
+    let hd = new User("lisi");
+    hd.name = "123";
+    hd.url = "http://baidu.com";
+    console.log(hd);
+  </script>
+</html>

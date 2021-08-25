@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // WakeMap的键名对象不会增加引用计数器，如果一个对象不被引用了会自动删除。
+    //WeakMap 中的健是弱引用    不会产生引用计数
+    //当垃圾回收时因为对象被删除，这时WakeMap也就没有记录了
+    let hd = {
+        name: "baidu"
+    };
+    cms = hd;
+    let map = new WeakMap()
+    map.set(hd, "baidu.com");
+    console.log(map);
+    hd = null;
+    cms = null;
+    setTimeout(function () {
+        console.log(map);
+
+    }, 1000);
+</script>
+
+</html>

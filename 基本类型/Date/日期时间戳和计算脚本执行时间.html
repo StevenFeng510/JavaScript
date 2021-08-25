@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //new String new Number;
+        // const date = new Date();
+        // console.log(date);
+        // console.log(typeof date);
+        // console.log(date * 1); //返回时间戳 1970年0时0分0秒到现在的毫秒数
+
+
+        // const hd = Date();
+        // console.log(hd);
+        // console.log(typeof hd);
+
+        // const date = Date.now();
+        // console.log(date);
+
+
+        // //Date函数计算脚本执行时间
+        // const start = Date.now();
+        // for (let i = 0; i < 200000000; i++) {}
+        // const end = Date.now();
+        // console.log((end - start) / 1000 + "秒");
+
+
+        //控制台测试  
+        console.time("for");
+        for (let i = 0; i < 200000000; i++) {}
+        console.timeEnd("for");
+
+        // const date = new Date("1990-9-22 3:22:18");
+        // console.log(date);
+        // console.log(date.getMonth());
+
+        // const date = new Date(1990, 2, 22, 3, 36, 16);
+        // console.log(date);
+
+        const param = [1990, 2, 22, 3, 36, 16];
+        const date = new Date(...param);
+        console.log(date);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let arr = [1, 2, 3, 4, 5];
+        arr.splice(arr.length, 0, "baidu123"); //像末尾增加元素
+        arr.splice(1, 0, "baidu"); //往数组中增加新元素
+
+        // arr.splice(1, 1, "baidu"); //替换元素
+
+        // let hd = arr.splice(0, 3, "hdmcs"); //截取出元素后 原数组发生改变 删除
+        // console.log(hd);
+        console.table(arr);
+
+
+        // let hd = arr.slice(1, 2); //对数组中的元素进行截取 原数组不发生改变  查找元素
+        // console.log(hd);
+        // console.table(arr);
+    </script>
+</body>
+
+</html>

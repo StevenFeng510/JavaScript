@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    function User(name, age) {
+      this.name = name;
+      this.age = age;
+    }
+    User.prototype.show = function () {
+      console.log(this.name, this.age);
+    };
+
+    function admin(name, age) {
+      const instance = Object.create(User.prototype);
+      User.call(instance, name, age);
+      instance.role = function () {
+        console.log("role");
+      };
+      return instance;
+    }
+    let hd = admin("baidu", 17);
+    hd.show();
+    // let admin = new Admin("baidu", 18);
+    // admin.show();
+
+    function Member(name, age) {
+      const instance = Object.create(User.prototype);
+      User.call(instance, name, age);
+      return instance;
+    }
+    let vip = Member("js", 18);
+    vip.show();
+  </script>
+</html>

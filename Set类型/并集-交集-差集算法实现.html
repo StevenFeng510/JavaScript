@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    let a = new Set([1, 2, 3, 4, 5]);
+    let b = new Set([4, 2, 5, 9]);
+    //并集
+    // console.log(new Set([...a, ...b]));
+
+    //差集
+    console.log(
+        new Set([...a].filter(function (item) {
+            return !b.has(item);
+        }))
+    );
+
+    //交集
+    console.log(
+        new Set([...a].filter(function (item) {
+            return b.has(item);
+        }))
+    );
+</script>
+
+</html>

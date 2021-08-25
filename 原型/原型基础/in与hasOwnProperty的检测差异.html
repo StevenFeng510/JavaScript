@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    let a = { url: "baidu" };
+    let b = { name: "js" };
+    // Object.prototype.web = "baidu.com";
+    // console.log("web" in a);
+    // console.log("url" in a); //使用in 检测原型链上是否存在属性
+    Object.setPrototypeOf(a, b);
+    // console.log("name" in a);
+
+    console.log(a.hasOwnProperty("name"));
+    //使用 for/in 遍历时同时会遍历原型上的属性如下例
+    for (const key in a) {
+      if (a.hasOwnProperty(key)) {
+        // const element = object[key];
+        console.log(a[key]);
+      }
+    }
+  </script>
+</html>

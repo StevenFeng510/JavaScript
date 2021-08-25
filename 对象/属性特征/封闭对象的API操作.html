@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    "use strict";
+    const user = {
+      name: "baidu",
+      age: 18,
+    };
+    // Object.seal(user); //封闭对象
+    // Object.isSealed(user); //是否处于封闭状态
+    console.log(
+      JSON.stringify(Object.getOwnPropertyDescriptors(user), null, 2)
+    );
+    if (!Object.isSealed(user)) {
+      user.site = "www.baidu.com";
+      delete user.name;
+    }
+    console.log(user);
+  </script>
+</html>

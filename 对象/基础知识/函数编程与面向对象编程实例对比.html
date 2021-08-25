@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    // let name = "baidu";
+    // let grade = [
+    //   { name: "JS", score: 89 },
+    //   { name: "baidu", score: 98 },
+    // ];
+    // function average(grade, name) {
+    //   let total = grade.reduce((t, l) => t + l.score, 0); //reduce(原始值,当前值,index,arr)累加器
+    //   return `${name}的平均成绩是:${total / grade.length}`;
+    // }
+    // console.log(average(grade, name));
+
+    //对象
+    let user = {
+      name: "baidu",
+      grade: [
+        { name: "JS", score: 89 },
+        { name: "baidu", score: 98 },
+      ],
+      average() {
+        let total = this.grade.reduce((t, l) => t + l.score, 0); //reduce(原始值,当前值,index,arr)累加器
+        return `${this.name}的平均成绩是:${total / this.grade.length}`;
+      },
+    };
+    console.log(user.average());
+  </script>
+</html>
