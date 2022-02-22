@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body></body>
+    <script src="../3.then方法/13.ajax.js"></script>
+    <script>
+        /* function hd() {}
+        hd.site = 'google.com';
+        console.dir(hd); */
+
+        function query(name) {
+            const cache = query.cache || (query.cache = new Map());
+            if (cache.has(name)) {
+                console.log('走缓存');
+                return Promise.resolve(cache.get(name));
+            }
+            return ajax(``).then((user) => {
+                cache.set(name, user);
+                console.log('没走缓存');
+                return user;
+            });
+        }
+
+        query('baidu').then((user) => {
+            console.log(user);
+        });
+        /*  Promise.resolve('baidu').then((value) => {
+            console.log(value);
+        }); */
+
+        setTimeout(() => {
+            query('baidu').then((user) => {
+                console.log(user);
+            });
+        }, 1000);
+        setTimeout(() => {
+            query('baidu').then((user) => {
+                console.log(user);
+            });
+        }, 1000);
+    </script>
+</html>

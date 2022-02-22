@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            .disable {
+                color: #ddd;
+            }
+        </style>
+    </head>
+
+    <body>
+        <ul>
+            <li>hdcms</li>
+            <li>baidu</li>
+        </ul>
+        <script>
+            //forEach 操作DOM节点元素
+            let lis = document.querySelectorAll('ul li');
+            /*  lis.forEach(function (item) {
+                item.addEventListener('click', function () {
+                    this.classList.toggle('disable');
+                });
+            }); */
+
+            lis.forEach((item) => {
+                item.addEventListener('click', function () {
+                    this.classList.toggle('disable');
+                });
+            });
+            // let lessons = [{
+            //         title: '媒体查询响应式布局',
+            //         category: 'css'
+            //     },
+            //     {
+            //         title: 'FLEX 弹性盒模型',
+            //         category: 'css'
+            //     },
+            //     {
+            //         title: 'MYSQL多表查询随意操作',
+            //         category: 'mysql'
+            //     }
+            // ];
+            // //引用类型
+            // lessons.forEach(function (item, index, lessons) {
+            //     // console.log(lessons);
+            //     item.title = item.title.substr(0, 2);
+            // });
+            // console.table(lessons);
+        </script>
+    </body>
+</html>

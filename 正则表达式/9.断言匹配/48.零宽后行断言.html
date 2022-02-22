@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <main>
+            <a href="https://baidu.com">百度</a>
+            <a href="https://google.com">谷歌</a>
+        </main>
+    </body>
+    <script>
+        // let hd = 'baidu456google123456';
+        // 匹配内容的前面为baidu (条件)
+        // const reg = /(?<=baidu)\d+/i;
+        // console.log(hd.match(reg));
+
+        const main = document.querySelector('main');
+        const reg = /(?<=href=(['"])).+(?=\1)/gi;
+        res = main.innerHTML.match(reg);
+        console.dir(res);
+        main.innerHTML = main.innerHTML.replace(reg, 'https://www.yahoo.com');
+    </script>
+</html>

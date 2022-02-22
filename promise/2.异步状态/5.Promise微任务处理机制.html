@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body></body>
+    <script>
+        // pending 准备阶段
+        // resolved 成功状态
+        // rejected 拒绝状态
+        console.log(
+            new Promise((resolve, reject) => {
+                // resolve('操作成功');
+                reject('失败状态');
+            }).then(
+                (value) => {
+                    console.log('成功业务处理');
+                },
+                (reason) => {
+                    console.log('没有权限');
+                }
+            )
+        );
+    </script>
+</html>

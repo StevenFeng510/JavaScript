@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <main></main>
+    </body>
+    <script>
+        let tel = '2020/09/12';
+        console.log(tel.replace(/\//g, '-'));
+
+        let hd = '(010)99999999 (020)8888888';
+        // 010-99999
+        let reg = /\((\d{3,4})\)(\d{7,8})/;
+        console.log(hd.match(reg));
+
+        // $1 $2 指的是原子组
+        console.log(hd.replace(reg, '$1-$2'));
+
+        // $`匹配内容的左边 $' 匹配内容的右边  $& 就是匹配的内容
+        let st = '%google=';
+        console.log(st.replace(/google/, "$'$'$&$'$'"));
+    </script>
+</html>

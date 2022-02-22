@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body></body>
+    <script>
+        // 模式修饰符
+        // a  [L] u 匹配对应的字符属性 unicode文字系统
+        let hd = 'google.com123不断发展';
+
+        // 使用\p{L}属性匹配字母
+        console.log(hd.match(/\p{L}/gu));
+
+        // 使用\p{P}属性匹配标点
+        console.log(hd.match(/\p{P}/gu));
+
+        // Script sc
+        console.log(hd.match(/\p{sc=Han}+/gu));
+
+        // 匹配宽字节
+        let str = '𝒳𝒴';
+        console.log(str.match(/[𝒳𝒴]+/u));
+    </script>
+</html>

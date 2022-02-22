@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <main>
+            <h1>JAVA</h1>
+            <h1>google.com</h1>
+            <h1>baidu.com</h1>
+        </main>
+    </body>
+    <script>
+        // let hd = 'google';
+        // let reg = /o/gi;
+
+        function search(string, reg) {
+            let result = [];
+            while ((res = reg.exec(string))) {
+                result.push(res);
+            }
+            return result;
+        }
+
+        let matchs = search(document.body.innerHTML, /<(h[1-6])>([\s\S]+?)<\/\1>/gi);
+        console.log(matchs);
+        /*  let result = [];
+
+        while ((res = reg.exec(hd))) {
+            result.push(res);
+        }
+        console.log(result); */
+    </script>
+</html>

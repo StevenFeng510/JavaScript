@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <input type="text" name="username" />
+        <span></span>
+    </body>
+    <script>
+        document.querySelector(`[name='username']`).addEventListener('keyup', (e) => {
+            const value = e.target.value;
+            let reg = /^[a-z][\w-]{4,11}$/i;
+            let res = reg.test(value) ? '正确' : '错误';
+            document.querySelector('span').innerHTML = res;
+        });
+    </script>
+</html>

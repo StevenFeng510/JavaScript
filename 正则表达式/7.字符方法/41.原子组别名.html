@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <main></main>
+    </body>
+    <script>
+        let hd = `
+                    <h1>houdunren.com</h1>
+                    <h2>hdcms.com</h2>
+                    <h1>后盾人</h1>
+                    `;
+
+        // ?<con> 给原子组起别名
+        const reg = /<(h[1-6])>(?<con>.*?)<\/\1>/g;
+        console.log(hd.replace(reg, '<h4>$<con></h4>'));
+    </script>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            div {
+                width: 200px;
+                height: 200px;
+                background: greenyellow;
+                position: absolute;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="bai">123</div>
+    </body>
+    <script>
+        function interval(callback, delay = 100) {
+            let id = setInterval(() => callback(id), delay);
+        }
+
+        /*  interval(function (id) {
+            console.log('object');
+        }) */
+
+        const div = document.querySelector('div');
+        interval((timeId) => {
+            let left = parseInt(window.getComputedStyle(div).left);
+            div.style.left = left + 10 + 'px';
+            if (left >= 200) {
+                clearInterval(timeId);
+                interval((timeId) => {
+                    let width = parseInt(window.getComputedStyle(div).width);
+                    div.style.width = width - 10 + 'px';
+                    if (width <= 20) {
+                        clearInterval(timeId);
+                    }
+                }, 10);
+                console.log(left);
+            }
+        });
+        console.log('baiud.com');
+    </script>
+</html>

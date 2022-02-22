@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body></body>
+    <script>
+        let sd = 'baidu2200hubicms3355';
+        // 不时用正则表达式
+        let nums = [...sd].filter((a) => !Number.isNaN(parseInt(a)));
+        console.log(nums.join(''));
+
+        console.log(sd.match(/\d/g).join(''));
+    </script>
+</html>

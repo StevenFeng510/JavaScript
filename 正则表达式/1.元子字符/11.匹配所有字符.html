@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body></body>
+    <script>
+        //元字符
+        // 匹配所有字符
+        let hd = `
+        <span>
+            baidu2010 @#!!!
+            google
+        </span>
+        `;
+
+        // . \d \w
+        // [\s\S] [\d\D]
+        console.log(hd.match(/<span>[\s\S]+<\/span>/));
+    </script>
+</html>

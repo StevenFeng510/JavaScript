@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body></body>
+    <script>
+        // 讲解：任务分同步和异步，同步按顺序执行，异步分宏微，微先宏后
+        // 任务执行顺序：同步任务，微任务，宏任务。但是要搞清楚微任务什么时候创建的
+        let promise = new Promise((resolve) => {
+            setTimeout(() => {
+                resolve();
+                console.log('setTimeout');
+            }, 0);
+            console.log('promise');
+        }).then((value) => {
+            console.log('成功');
+        });
+        console.log('baidu');
+    </script>
+</html>

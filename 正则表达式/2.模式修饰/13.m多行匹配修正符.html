@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body></body>
+    <script>
+        // 模式修饰符
+        let hd = `
+        #1 js,200元 #
+        #2 php,300元 #
+        #9 css # 谷歌
+        #4 html,700元 #
+        `;
+
+        // [{name:'js',prrice:'200元'}]
+        let lessons = hd.match(/^\s*#\d+\s+.+\s+#$/gm).map((v) => {
+            v = v.replace(/\s*#\d+\s*/, '').replace(/\s+#/, '');
+            [name, price] = v.split(',');
+            return { name, price };
+        });
+        console.log(JSON.stringify(lessons, null, 2));
+    </script>
+</html>

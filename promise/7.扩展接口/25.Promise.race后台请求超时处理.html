@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body></body>
+    <script src="../3.then方法/13.ajax.js"></script>
+    <script>
+        const p1 = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                reject('rejected');
+            }, 2000);
+        });
+
+        const p2 = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve('resolve');
+            }, 1000);
+        });
+
+        Promise.race([p1, p2])
+            .then((results) => {
+                console.log(results);
+            })
+            .catch((msg) => {
+                console.log(msg);
+            });
+
+        function query(url, delay = 1000) {
+            // 根据用户批量获取用户资料
+            let promises = [
+                ajax(url),
+                new Promise((resolve, reject) => {
+                    setTimeout(() => {
+                        reject('请求超时');
+                    }, delay);
+                }),
+            ];
+            return Promise.race(promises);
+        }
+
+        query(``, 1000)
+            .then((results) => {
+                console.log(results);
+            })
+            .catch((msg) => {
+                console.log(msg);
+            });
+
+        // race 以最快返回的promise为准 请求时间过长的话就以下面的promise为准
+        Promise.race(promises)
+            .then((results) => {
+                console.log(results);
+            })
+            .catch((msg) => {
+                console.log(msg);
+            });
+    </script>
+</html>

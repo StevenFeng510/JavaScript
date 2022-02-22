@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <main>百度 百度 百度不断分享视频教程，网址是baidu.comgoogle.com</main>
+    </body>
+    <script>
+        let reg = /百度/g;
+        const main = document.querySelector('body main');
+        console.log(main.innerHTML.match(reg));
+        // console.log(reg.exec(main.innerHTML));
+
+        let count = 0;
+        while ((res = reg.exec(main.innerHTML))) {
+            count++;
+        }
+        console.log(count);
+    </script>
+</html>

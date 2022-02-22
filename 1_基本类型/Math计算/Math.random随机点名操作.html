@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+
+    <body>
+        <script>
+            // >=0 ` <1
+            // console.log(Math.random());
+            //0 ~ 5   0 ~ 0.9   * 5 Math.float(0  4.5)
+
+            //Math.floor(Math.random() * (Max + 1) 最大值区间
+            // console.log(Math.floor(Math.random() * (5 + 1))); //向下取整
+
+            //min+Math.floor(Math.random()*(Max-min+1))
+            // console.log(2 + Math.floor(Math.random() * (5 - 2)));
+
+            const students = ['李四', '张三', '王五', '李六', '里吗'];
+            // const index = Math.floor(Math.random() * students.length);
+            // console.log(students[index]);
+
+            // 2~5
+            // const index = (2 + Math.floor(Math.random() * (students.length - 2)));
+            // console.log(students[index]);
+
+            // const index = (2 + Math.floor(Math.random() * (4 - 2)));
+            // console.log(students[index]);
+
+            //随机点名操作
+            function arrayRandomValue(array, start = 1, end) {
+                end = end ? end : array.length;
+                start--;
+                const index = start + Math.floor(Math.random() * (end - start));
+                return array[index];
+            }
+            console.log(arrayRandomValue(students, 3, 4));
+        </script>
+    </body>
+</html>

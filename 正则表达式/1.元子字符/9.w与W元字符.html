@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body></body>
+    <script>
+        //元字符
+        // \w 包括 \d   \w 包含字母 数字 下划线
+        // let hd = 'a!@#@baidu2010';
+        // console.log(hd.match(/\w+/));
+
+        let email = '850613079@qq.com';
+        console.log(email.match(/^\w+@\w+\.\w+$/));
+
+        // \W 表示除了数字 字母 下划线
+        console.log('hdms@'.match(/\W/));
+
+        //a \w 5 10
+        let username = prompt('请输入用户名');
+        console.log(/^[a~z]\w{4,9}$/.test(username));
+    </script>
+</html>

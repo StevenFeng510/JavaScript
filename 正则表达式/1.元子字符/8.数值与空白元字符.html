@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body></body>
+    <script>
+        //元字符
+        // let hd = 'baidu 2010';
+        // g 表示一直匹配符合的直到没有  +表示匹配多个
+        // console.log(hd.match(/\d+/g));
+
+        let bu = `张三: 010-99999998,李四: 030-88888888`;
+        console.log(bu.match(/\d{3}-\d{7,8}/g));
+
+        // \d匹配数字  \D 匹配除了数字
+        let hd = 'baidu 2010';
+        console.log(hd.match(/\D+/));
+
+        let hd1 = `张三: 010-99999998,李四: 030-88888888`;
+        console.log(hd1.match(/[^-\d:,\s]+/g));
+
+        // \s  匹配到空白 \S 除了空白
+        console.log(/\s/.test('\nhd'));
+        console.log(/\S/.test('hd'));
+    </script>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body></body>
+    <script src="../3.then方法/13.ajax.js"></script>
+    <script>
+        const hdcms = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                reject('第一个异步');
+            }, 1000);
+        }).catch((error) => {
+            console.log('error');
+        });
+
+        const baidu = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve('第二个异步');
+            }, 1000);
+        });
+
+        Promise.all([hdcms, baidu]).then((result) => {
+            console.log(result);
+        });
+
+        // 根据用户批量获取用户资料
+        function getUsers(names) {
+            let promises = names.map((name) => {
+                return ajax(``);
+            });
+            return Promise.all(promises);
+        }
+
+        getUsers(['Steven']).then((users) => {
+            console.log(users);
+        });
+    </script>
+</html>

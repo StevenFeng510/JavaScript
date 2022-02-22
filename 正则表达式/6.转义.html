@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body></body>
+    <script>
+        let price = 23.24;
+        // . 除换行外任何字符  .普通点
+        // d   \d 数字  0~9
+        console.log(/\d+\.\d+/.test(price));
+
+        console.log('\\d+\\.\\d');
+        let reg = new RegExp('\\d+\\.\\d');
+        console.log(reg.test(price));
+
+        let url = 'http://www.baidu.com';
+        console.log(/http?:\/\/\w+\.\w+\.\w+/.test(url));
+    </script>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <input type="text" name="username" id="" />
+    </body>
+    <script>
+        // 模式修饰符
+        // 原子表  排除匹配
+        let hd = 'google2010';
+        console.log(hd.match(/[^ue]/gi));
+
+        let hd1 = `张三:010-99999999,李四:020-88888888`;
+        console.log(hd1.match(/[^\d:\-,]+/g));
+    </script>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <main>
+            <a href="https://www.baidu.com">baidu</a>
+            <a href="https://www.google.com">google</a>
+            <a href="https://www.sina.com.cn">sina</a>
+        </main>
+    </body>
+    <script>
+        //[{link:'',title:''}]
+        const main = document.querySelector('body main');
+        const reg = /<a.*?href=(["'](?<link>.*?)\1)>(?<title>.*?)<\/a>/gi;
+        const links = [];
+        for (const iterator of main.innerHTML.matchAll(reg)) {
+            console.log(iterator);
+            links.push(iterator['groups']);
+        }
+        console.log(links);
+    </script>
+</html>

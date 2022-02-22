@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <main>
+            <span>JAVA</span>
+            <span>google.com</span>
+            <span>baidu.com</span>
+        </main>
+    </body>
+    <script>
+        // h4 描红 google
+        const main = document.querySelector('main');
+        const reg = /<span>([\s\S]+?)<\/span>/gi;
+        main.innerHTML = main.innerHTML.replace(reg, (v, p1) => {
+            return `<h4 style="color:red">Steven-${p1}</h4>`;
+        });
+    </script>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <main>
+            <h1>JAVA</h1>
+            <h1>google.com</h1>
+            <h1>baidu.com</h1>
+        </main>
+    </body>
+    <script>
+        let reg = /<(h[1-6])>([\s\S]+?)<\/\1>/gi;
+        const body = document.body;
+        // console.dir(body.innerHTML.match(reg));
+
+        // matchAll 返回的是迭代对象
+        // 迭代对象包含 全部内容和原子组
+        const hd = body.innerHTML.matchAll(reg);
+        let contents = [];
+        for (const iterator of hd) {
+            console.dir(iterator);
+            contents.push(iterator[2]);
+        }
+        console.table(contents);
+    </script>
+</html>

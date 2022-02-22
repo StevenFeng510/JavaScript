@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body></body>
+    <script>
+        // Promise的状态是不可撤销的 不可逆的 且单一的
+        let p1 = new Promise((resolve, reject) => {
+            // resolve('一瓶可乐');
+            reject('涨价');
+        })
+            .then(null, (a) => {
+                console.log(`处理了失败的状态,${a}`);
+            })
+            .then(
+                (value) => {
+                    // console.log(value);
+                },
+                (reason) => {
+                    console.log(reason);
+                }
+            );
+    </script>
+</html>

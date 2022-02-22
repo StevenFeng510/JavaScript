@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body></body>
+    <script>
+        'use strict';
+        // 函数中声明的变量，只能在函数及其子函数中使用
+        // 函数中声明的变量就像声明了私有领地，外部无法访问
+        const web = 'Steven';
+        function show() {
+            const web = '...';
+            function run() {
+                var web = 'run...web';
+                console.log(web);
+            }
+            run();
+            console.log(web);
+        }
+        show();
+        console.log(web);
+    </script>
+</html>

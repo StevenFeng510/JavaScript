@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body></body>
+    <script>
+        //元字符
+        // \w  \d  .包含除了换行符的所有字符
+        // let hd = 'baidu*()*)(&_+';
+        // console.log(hd.match(/.+/));
+
+        let url = 'https://www.google.com';
+        console.log(url.match(/https?:\/\/\w+\.\w+\.\w+/));
+
+        let hd = `
+        google.com
+        `;
+        console.log(hd.match(/.+/));
+
+        let tel = '010 - 99999999';
+        console.log(tel.match(/\d+\s-\s\d{8}/));
+    </script>
+</html>

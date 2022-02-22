@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body></body>
+    <script src="../3.then方法/13.ajax.js"></script>
+    <script>
+        /*  const p1 = new Promise((resolve, reject) => {
+            reject('rejected');
+        });
+
+        const p2 = new Promise((resolve, reject) => {
+            resolve('resolve');
+        });
+
+        Promise.allSettled([p1, p2]).then((results) => {
+            console.log(results);
+        }); */
+
+        // 根据用户批量获取用户资料
+        let promises = ['STeven'].map((name) => {
+            return ajax(``);
+        });
+        Promise.allSettled(promises).then((values) => {
+            let users = values.filters((user) => {
+                return user.status == 'fulfilled';
+            });
+            console.log(users);
+        });
+    </script>
+</html>
