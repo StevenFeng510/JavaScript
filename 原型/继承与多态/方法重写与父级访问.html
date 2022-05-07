@@ -1,29 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body></body>
-  <script>
-    function User() {}
-    User.prototype.show = function () {
-      console.log("user name");
-    };
-    User.prototype.site = function () {
-      return "baidu";
-    };
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body></body>
+    <script>
+        function User() {}
+        User.prototype.show = function () {
+            console.log('user name');
+        };
+        User.prototype.site = function () {
+            return 'baidu';
+        };
 
-    function Admin() {}
-    Admin.prototype = Object.create(User.prototype);
-    Admin.prototype.constructor = Admin;
-    //show 方法重写
-    Admin.prototype.show = function () {
-      console.log(User.prototype.site() + "admin method");
-    }; //父级属性调用
+        function Admin() {}
+        Admin.prototype = Object.create(User.prototype);
+        Admin.prototype.constructor = Admin;
+        //show 方法重写
+        Admin.prototype.show = function () {
+            console.log(User.prototype.site() + 'admin method');
+        }; //父级属性调用
 
-    let hd = new Admin();
-    hd.show();
-  </script>
+        let hd = new Admin();
+        hd.show();
+        console.log(hd);
+    </script>
 </html>
